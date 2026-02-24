@@ -45,7 +45,7 @@ Required environment variables:
 | `MODEL_NAME` | LLM model name | `llama3.2` |
 | `LANGSMITH_TRACING` | Enable LangSmith tracing | `true` |
 | `LANGSMITH_API_KEY` | LangSmith API key | — |
-| `LANGCHAIN_PROJECT` | LangSmith project name | `agentic-template` |
+| `LANGCHAIN_PROJECT` | LangSmith project name | `agentic-research-assistant` |
 
 3. Make sure Ollama is running locally with your model pulled:
 

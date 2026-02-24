@@ -1,5 +1,5 @@
 [project]
-name = "Agentic Research Assistant"
+name = "agentic-research-assistant"
 version = "0.1.0"
 description = "A LangGraph-based research agent that iteratively searches the web"
 readme = "README.md"

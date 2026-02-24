@@ -62,7 +62,12 @@ async def run_agent(user_query: str):
         "evaluation_result": EvaluationConstants.PENDING,
         "feedback": "",
     }
-    config = {"recursion_limit": 25}
+    config = {
+        "recursion_limit": 25,
+        "run_name": f"research: {user_query[:50]}",
+        "tags": ["research-agent", "interactive"],
+        "metadata": {"query": user_query},
+    }
 
     console.print()
     console.print(Panel(

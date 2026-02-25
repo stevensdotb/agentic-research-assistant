@@ -78,7 +78,7 @@ async def run_agent(user_query: str):
     console.print()
 
     try:
-        status = Status("[bold cyan]🔍 researcher[/]", console=console)
+        status = Status("[bold cyan]🔍 researcher agent :: work in progress ...[/]", console=console)
         status.start()
         try:
             final_state = await smart_researcher.ainvoke(initial_state, config)

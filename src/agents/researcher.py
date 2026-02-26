@@ -8,7 +8,7 @@ from src.tools import tools
 # Node name constants
 RESEARCHER_NODE = "researcher"
 EVALUATOR_NODE = "evaluator"
-TOOL_NODE = "tools"
+WEB_SEARCH_NODE = "web_search"
 SEARCH_LIMIT_ANSWER_NODE = "search_limit_answer"
 
 
@@ -34,7 +34,7 @@ def route_after_evaluation(state: AgentState) -> str:
 workflow = StateGraph(AgentState)
 
 workflow.add_node(RESEARCHER_NODE, researcher_node)
-workflow.add_node(TOOL_NODE, ToolNode(tools))
+workflow.add_node(WEB_SEARCH_NODE, ToolNode(tools))
 workflow.add_node(EVALUATOR_NODE, evaluator_node)
 workflow.add_node(SEARCH_LIMIT_ANSWER_NODE, search_limit_answer_node)
 
@@ -44,13 +44,13 @@ workflow.add_conditional_edges(
     RESEARCHER_NODE,
     route_after_researcher,
     {
-        TOOL_NODE: TOOL_NODE,
+        "tools": WEB_SEARCH_NODE,
         EVALUATOR_NODE: EVALUATOR_NODE,
         SEARCH_LIMIT_ANSWER_NODE: SEARCH_LIMIT_ANSWER_NODE,
     },
 )
 
-workflow.add_edge(TOOL_NODE, RESEARCHER_NODE)
+workflow.add_edge(WEB_SEARCH_NODE, RESEARCHER_NODE)
 
 workflow.add_conditional_edges(
     EVALUATOR_NODE,

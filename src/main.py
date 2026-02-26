@@ -21,7 +21,7 @@ console = Console()
 
 NODE_STYLES = {
     "researcher": ("bold cyan", "🔍"),
-    "tools": ("bold yellow", "🔧"),
+    "web_search": ("bold yellow", "🔧"),
     "evaluator": ("bold magenta", "⚖️"),
     "search_limit_answer": ("bold green", "✨"),
 }
